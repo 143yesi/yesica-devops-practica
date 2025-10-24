@@ -1,14 +1,15 @@
-# Imagen base de Python
-FROM python:3.11
+# Imagen base ligera de Python
+FROM python:3.12-slim
 
-# Carpeta de trabajo dentro del contenedor
+# Directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar archivos del proyecto al contenedor
-COPY . /app
-
-# Instalar dependencias si tienes un requirements.txt
+# Copiar y instalar dependencias
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Comando para ejecutar tu aplicación
+# Copiar todo el código del proyecto
+COPY . .
+
+# Comando para ejecutar la aplicación
 CMD ["python", "main.py"]

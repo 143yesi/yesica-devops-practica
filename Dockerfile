@@ -8,8 +8,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar todo el código del proyecto
-COPY . .
+# Copiar el código fuente
+COPY src/ .
 
 # Comando para ejecutar la aplicación
 CMD ["python", "main.py"]

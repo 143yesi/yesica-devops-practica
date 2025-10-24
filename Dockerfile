@@ -11,5 +11,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copiar el código fuente
 COPY src/ .
 
-# Comando por defecto
+# Comando para ejecutar la aplicación
 CMD ["python", "main.py"]
